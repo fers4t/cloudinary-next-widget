@@ -7,7 +7,7 @@ Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/document
 I did not release it on NPM for now. So you can install it like this;
 
 ```bash
-pnpm install fers4t/cloudinary-react-widget
+pnpm add fers4t/cloudinary-react-widget
 ```
 
 ### Usage
