@@ -1,5 +1,5 @@
 {
-   "name": "react-package-fers4t",
+   "name": "cloudinary-react-widget",
    "description": "Test package for react",
    "version": "0.2.1-10",
    "author": "oceaners-dev",
@@ -19,7 +19,9 @@
       "build:esm": "tsc",
       "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
       "dev": "concurrently \"pnpm build\" \"pnpm storybook\"",
-      "watch": "tsc --watch",
+      "watch": "concurrently \"pnpm watch:esm\" \"pnpm watch:cjs\"",
+      "watch:esm": "tsc --watch",
+      "watch:cjs": "tsc --module CommonJS --outDir dist/cjs --watch",
       "commit": "cz",
       "storybook": "start-storybook -p 6006 --quiet",
       "build-storybook": "build-storybook",
@@ -30,25 +32,17 @@
       "node": ">=14.0.0"
    },
    "devDependencies": {
-      "@storybook/addon-actions": "6.5.13",
-      "@storybook/addon-essentials": "6.5.13",
-      "@storybook/addon-interactions": "6.5.13",
-      "@storybook/addon-links": "6.5.13",
-      "@storybook/builder-webpack5": "6.5.13",
-      "@storybook/manager-webpack5": "6.5.13",
-      "@storybook/react": "6.5.13",
-      "@storybook/storybook-deployer": "2.8.16",
-      "@storybook/testing-library": "0.0.13",
-      "@types/jest": "29.2.3",
       "@types/node": "18.11.9",
       "@types/react": "18.0.25",
       "@types/react-dom": "18.0.7",
+      "@commitlint/cli": "17.3.0",
+      "@commitlint/config-conventional": "17.3.0",
+      "@ryansonshine/commitizen": "4.2.8",
+      "@ryansonshine/cz-conventional-changelog": "3.3.4",
       "@typescript-eslint/eslint-plugin": "^5.41.0",
       "@typescript-eslint/parser": "^5.41.0",
       "autoprefixer": "^10.4.12",
       "concurrently": "7.4.0",
-      "date-fns": "^2.29.3",
-      "date-fns-tz": "^1.3.7",
       "eslint": "8.26.0",
       "eslint-config-airbnb": "19.0.4",
       "eslint-config-next": "13.0.0",
@@ -84,6 +78,27 @@
    },
    "dependencies": {
       "@faker-js/faker": "7.6.0",
-      "@storybook/addon-postcss": "2.0.0"
+      "@storybook/addon-postcss": "2.0.0",
+      "cz": "^1.8.2",
+      "release-it": "^15.5.1",
+      "scripts": "link:.."
+   },
+   "config": {
+      "commitizen": {
+         "path": "./node_modules/@ryansonshine/cz-conventional-changelog"
+      }
+   },
+   "release-it": {
+      "git": {
+         "commitMessage": "chore(release): v${version}"
+      },
+      "github": {
+         "release": true
+      },
+      "npm": {
+         "publish": true,
+         "access": "public",
+         "publishPath": "--registry https://registry.npmjs.org"
+      }
    }
 }

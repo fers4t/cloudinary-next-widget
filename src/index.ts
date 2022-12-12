@@ -1,1 +1,1 @@
-export * from './Component'
+export * from './cloudinary-upload';
