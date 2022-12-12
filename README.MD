@@ -1,13 +1,12 @@
 # cloudinary-next-widget
 
-Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget)
+Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget). **IN
+DEVELOPMENT**.
 
 ### Installing
 
-I did not release it on NPM for now. So you can install it like this;
-
 ```bash
-pnpm add fers4t/cloudinary-next-widget
+pnpm add cloudinary-next-widget
 ```
 
 ### Usage
@@ -51,13 +50,13 @@ export default function Home() {
 }
 ```
 
-Custom styles are **overriding defaults completely**. So if you want to use custom styles, you must handle whole style yourself.
+Custom styles are **overriding defaults completely**. So if you want to use custom styles, you must handle whole style
+yourself.
 
 ## TO-DO
 
 -  [ ] Add `multiple` prop to prevent/allow multiple uploads.
--  [ ] Add `signed` version 
-... open issues/PRs for more.
+-  [ ] Add `signed` version ... open issues/PRs for more.
 
 ## License
 
