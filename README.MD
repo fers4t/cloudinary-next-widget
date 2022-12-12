@@ -1,9 +1,64 @@
-### IN DEVELOPMENT
+# cloudinary-react-widget
 
-## Install package to Next.js app
+Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget)
 
-cd example pnpm install ../
+### Installing
 
-## Watch changes
+I did not release it on NPM for now. So you can install it like this;
 
-cd to root folder and run pnpm watch
+```bash
+pnpm install fers4t/cloudinary-react-widget
+```
+
+### Usage
+
+```tsx
+import React, { useState } from 'react';
+import { CloudinaryUpload } from 'cloudinary-react-widget';
+
+export default function Home() {
+   const [callbacks, setCallbacks] = useState();
+   return (
+      <CloudinaryUpload
+         cloudName="YOUR CLOUD NAME"
+         uploadPreset="YOUR UPLOAD PRESET"
+         onUpload={(a) => setCallbacks(a)}
+      />
+   );
+}
+```
+
+You can track all callbacks with `onUpload` prop. I'm storing all of them.
+
+## Styling
+
+```tsx
+import React, { useState } from 'react';
+import { CloudinaryUpload } from 'cloudinary-react-widget';
+
+export default function Home() {
+   const [callbacks, setCallbacks] = useState();
+
+   return (
+      <CloudinaryUpload
+         cloudName="YOUR CLOUD NAME"
+         uploadPreset="YOUR UPLOAD PRESET"
+         onUpload={(a) => setCallbacks(a)}
+         buttonClassNames="text-lg font-bold"
+         imageWrapperStyles={{ width: '100px', height: '100px' }}
+      />
+   );
+}
+```
+
+Custom styles are **overriding defaults completely**. So if you want to use custom styles, you must handle whole style yourself.
+
+## TO-DO
+
+-  [ ] Add `multiple` prop to prevent/allow multiple uploads.
+-  [ ] Add `signed` version 
+... open issues/PRs for more.
+
+## License
+
+This project is licensed under the MIT License.

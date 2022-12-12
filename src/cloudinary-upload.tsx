@@ -107,7 +107,7 @@ const CloudinaryUpload: React.FC<ICloudinaryUpload> = (props) => {
                               }}
                            />
                            <button
-                              className={`cloudinary-close-btn-${cb.info.etag} ${buttonClassNames || ''}`}
+                              className={`cloudinary-close-btn-${cb.info.etag}`}
                               style={{
                                  // display: 'none',
                                  display: 'flex',
@@ -120,8 +120,7 @@ const CloudinaryUpload: React.FC<ICloudinaryUpload> = (props) => {
                                  outline: 'none',
                                  border: 'none',
                                  padding: '2px',
-                                 cursor: 'pointer',
-                                 ...buttonStyles
+                                 cursor: 'pointer'
                               }}
                               onClick={() => {
                                  // @ts-ignore
@@ -145,7 +144,13 @@ const CloudinaryUpload: React.FC<ICloudinaryUpload> = (props) => {
             )}
 
             <div>
-               <button type="button" id="leftbutton" onClick={openWidget}>
+               <button
+                  type="button"
+                  id="leftbutton"
+                  onClick={openWidget}
+                  className={buttonClassNames || ''}
+                  style={buttonStyles || {}}
+               >
                   Upload Image(s)
                </button>
             </div>
