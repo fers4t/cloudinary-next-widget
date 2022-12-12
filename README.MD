@@ -1,4 +1,4 @@
-# cloudinary-react-widget
+# cloudinary-next-widget
 
 Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget)
 
@@ -7,14 +7,14 @@ Next.js component for [Cloudinary Upload Widget](https://cloudinary.com/document
 I did not release it on NPM for now. So you can install it like this;
 
 ```bash
-pnpm add fers4t/cloudinary-react-widget
+pnpm add fers4t/cloudinary-next-widget
 ```
 
 ### Usage
 
 ```tsx
 import React, { useState } from 'react';
-import { CloudinaryUpload } from 'cloudinary-react-widget';
+import { CloudinaryUpload } from 'cloudinary-next-widget';
 
 export default function Home() {
    const [callbacks, setCallbacks] = useState();
@@ -34,7 +34,7 @@ You can track all callbacks with `onUpload` prop. I'm storing all of them.
 
 ```tsx
 import React, { useState } from 'react';
-import { CloudinaryUpload } from 'cloudinary-react-widget';
+import { CloudinaryUpload } from 'cloudinary-next-widget';
 
 export default function Home() {
    const [callbacks, setCallbacks] = useState();
